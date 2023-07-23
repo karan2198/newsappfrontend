@@ -7,15 +7,30 @@
     <title>NewsApiApp</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-        <style>
-            #dateInput{
-               width: 150px;
-            }
-        </style>
+    <style>
+        #dateInput {
+            width: 150px;
+        }
+
+        #previous {
+            margin-right: auto;
+        }
+
+        #next {
+            margin-left: 818px;
+            /* Adjust the value to your preference */
+        }
+
+        .sticky-navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-navbar" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">NewsApp</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -68,7 +83,7 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex justify-content-around my-4">
+        <div class="prev-next">
             <button type="button" class="btn btn-primary" id="previous">
                 &lt; previous page</button> <button type="button" class="btn btn-primary" id="next"> next page
                 &gt;</button>

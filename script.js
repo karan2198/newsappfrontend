@@ -42,55 +42,56 @@ document.getElementById('search').addEventListener("click", (e) => {
     e.preventDefault();
     let query = document.getElementById('searchInput').value;
     currentQuery = query;
-    fetchNews(1, currentQuery)
+    let currentDate = document.getElementById('dateInput').value;
+    fetchNews(1, currentQuery,currentDate)
 })
 document.getElementById('previous').addEventListener("click", (e) => {
     e.preventDefault();
     if (currentPage > 1) {
         currentPage = currentPage - 1
-        const currentDate = document.getElementById('dateInput').value;
+        let currentDate = document.getElementById('dateInput').value;
         fetchNews(currentPage, currentQuery, currentDate)
     }
 })
 document.getElementById('next').addEventListener("click", (e) => {
     e.preventDefault();
     currentPage = currentPage + 1;
-    const currentDate = document.getElementById('dateInput').value;
+    let currentDate = document.getElementById('dateInput').value;
     fetchNews(currentPage, currentQuery, currentDate)
 })
 document.getElementById('Tech').addEventListener("click", (e) => {
     e.preventDefault();
     currentQuery = "Technology"
-    const currentDate = document.getElementById('dateInput').value;
+    let currentDate = document.getElementById('dateInput').value;
     fetchNews(1, currentQuery, currentDate);
 })
 document.getElementById('sports').addEventListener("click", (e) => {
     e.preventDefault();
     currentQuery = "sports"
-    const currentDate = document.getElementById('dateInput').value;
+    let currentDate = document.getElementById('dateInput').value;
     fetchNews(1, currentQuery, currentDate);
 })
 document.getElementById('business').addEventListener("click", (e) => {
     e.preventDefault();
     currentQuery = "Business"
-    const currentDate = document.getElementById('dateInput').value;
+    let currentDate = document.getElementById('dateInput').value;
     fetchNews(1, currentQuery, currentDate);
 })
 document.getElementById('weather').addEventListener("click", (e) => {
     e.preventDefault();
     currentQuery = "weather"
-    const currentDate = document.getElementById('dateInput').value;
+    let currentDate = document.getElementById('dateInput').value;
     fetchNews(1, currentQuery, currentDate);
 })
 document.getElementById('health').addEventListener("click", (e) => {
     e.preventDefault();
     currentQuery = "health"
-    const currentDate = document.getElementById('dateInput').value;
+    let currentDate = document.getElementById('dateInput').value;
     fetchNews(1, currentQuery, currentDate);
 })
 const dateInput = document.getElementById('dateInput');
 dateInput.addEventListener('change', (event) => {
-    const currentDate = event.target.value; // Get the selected date from the input
+    let currentDate = event.target.value; // Get the selected date from the input
 
     // Fetch news with the selected date
     fetchNews(1, currentQuery, currentDate);
