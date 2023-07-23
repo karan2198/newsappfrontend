@@ -26,10 +26,11 @@ const fetchNews = async (page, q, date) => {
         str = str + `<div class="card my-4 mx-2" style="width: 18rem">
                 <img src="${item.urlToImage}" class="card-img-top" alt="..." />
                 <div class="card-body">
-                    <h5 class="card-title">${item.title}</h5>
+                    <h5 class="card-title">${item.title.slice(0,45)}...</h5>
                     <p class="card-text">
-                      ${item.description}
+                      ${item.description.slice(0,88)}...
                     </p>
+                    <p className="card-text"><small class="text-muted">By ${item.author || "unknown"} on ${item.publishedAt}</small></p>
                     <a href="${item.url}" target="_blank" class="btn btn-primary">Read Article</a>
                 </div>
             </div>`
@@ -43,7 +44,7 @@ document.getElementById('search').addEventListener("click", (e) => {
     let query = document.getElementById('searchInput').value;
     currentQuery = query;
     let currentDate = document.getElementById('dateInput').value;
-    fetchNews(1, currentQuery,currentDate)
+    fetchNews(1, currentQuery, currentDate)
 })
 document.getElementById('previous').addEventListener("click", (e) => {
     e.preventDefault();
@@ -91,8 +92,6 @@ document.getElementById('health').addEventListener("click", (e) => {
 })
 const dateInput = document.getElementById('dateInput');
 dateInput.addEventListener('change', (event) => {
-    let currentDate = event.target.value; // Get the selected date from the input
-
-    // Fetch news with the selected date
+    let currentDate = event.target.value; 
     fetchNews(1, currentQuery, currentDate);
 });
