@@ -9,9 +9,9 @@ const fetchNews = async (page, q, date) => {
 
     let url;
     if (date) {
-        url = `http://lavender-butterfly-hem.cyclic.app/news?q=${q}&page=${page}&date=${date}`;
+        url = `https://lavender-butterfly-hem.cyclic.app/news?q=${q}&page=${page}&date=${date}`;
     } else {
-        url = `http://lavender-butterfly-hem.cyclic.app/news?q=${q}&page=${page}`;
+        url = `https://lavender-butterfly-hem.cyclic.app/news?q=${q}&page=${page}`;
     }
     console.log(url);
     var req = new Request(url);
